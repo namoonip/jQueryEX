@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('tr:first').css('background-color', "grey");
+        $('tr:gt(0)').css('background-color', "black");
+        
+        $('tr:even').css('color', "white")
+        $('tr:odd').css('color', "yellow")
+        
+        $('tbody tr td:last-child').each(function(i, item) {
+            var price = $(item).text();
+            var discountPrice = price * 0.9
+            $(item).text(price + "(" + discountPrice + ")");
+        });
+        
+    })    
+    </script>
+<title>Document</title>
+</head>
+<body>
+    <table class="w3-table w3-table-all">
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>상품명</td>
+                <td>가격</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>아이폰7</td>
+                <td>900000</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>LG 그램 노트북</td>
+                <td>120000</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>샤오미 보조 배터리</td>
+                <td>15000</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>핸드폰 케이스</td>
+                <td>30000</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>블루투스 헤드폰</td>
+                <td>500000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//생성자 함수로 객체로 만들면 모든 정보가 공개되기때문에 캡슐화를통해 정보를 공개하지 않게 만들어야한다.
+		// 실행될 때마다 새로운 객체를 만들어서 반환하는 팩토리 함수다.
+		// 팩토리 함수를 활용하면 변수를 은닉화활 수 있다.
+		
+		function person(name, age, addr){
+			var _name = name;
+			var _age = age;
+			var _addr = addr;
+			
+			return {
+				getName:function(){
+					return _name;
+				},
+				getAge:function(){
+					return _age;
+				},
+				getAddr:function(){
+					return _addr;
+				}
+			}				
+		}
+		
+		var person1 = person('김유신', 30, '서울');
+		var person1 = person('강감찬', 30, '서울');
+		
+		alert(person1.getName());
+		
+	</script>
+</head>
+<body>
+
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		(function(global){
+			
+			function factory(id) {
+				
+				var el = document.getElementById(id);
+				
+				return {
+					getContent: function(){
+						return el.textContent;
+					},
+					
+					setContent: function(text){
+						
+						el.textContent = text;
+					}
+				}
+			}
+			
+			global.e = factory;
+			
+		})(window);
+	</script>
+</head>
+<body>
+	<h1 id="first">안녕하세요</h1>
+	<h1 id="second">반갑습니다.</h1>
+	<h1 id="third">그럼 이만....</h1>
+</body>
+</html>

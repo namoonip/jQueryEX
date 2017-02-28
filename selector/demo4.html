@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+            var scoreBoxes = $('#score-table .score-box');
+            var sum = 0;
+            
+            for(var i=0; i<scoreBoxes.length; i++) {
+                var score = parseInt($(scoreBoxes[i]).text());
+                sum += score;
+            }
+            */
+            
+            var sum = 0;
+            $('#score-table .score-box').each(function(index, item) {
+                var score = parseInt($(item).text());
+                sum += score;
+            });
+            
+            $('.score-result').text(sum);
+            
+        })
+    </script>
+</head>
+<body>
+    <table class="w3-table" id="score-table" border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>성적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>홍길동</td>
+                <td class="score-box">50</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>김유신</td>
+                <td class="score-box">30</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>강감찬</td>
+                <td class="score-box">70</td>
+            </tr>
+            <tr>
+                <th colspan="2">합계</th>
+                <th class="score-result"></th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

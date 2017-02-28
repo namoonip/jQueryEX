@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var xml = '<?xml version="1.0" encoding="utf-8" ?>';
+        xml += '<songList>';
+        xml += '    <song>';
+        xml += '        <ranking>1위</ranking>';
+        xml += '        <title>knock knock</title>';
+        xml += '     <artist>Twice</artist>';
+        xml += '    </song>'
+        xml += '    <song>';
+        xml += '        <ranking>2위</ranking>';
+        xml += '        <title>첫눈처럼 너에게 가겠다.</title>';
+        xml += '        <artist>에일리</artist>';
+        xml += '    </song>'
+        xml += '    <song>';
+        xml += '        <ranking>3위</ranking>';
+        xml += '        <title>봄날</title>';
+        xml += '        <artist>방탄소년단</artist>';
+        xml += '    </song>'
+        xml += '</songList>';
+        
+        // xml 형식의 문서/텍스트를 xml Document 객체로 변환한다.
+        var xmlDoc = $.parseXML(xml);
+        
+        var htmlContent = "";
+        $(xmlDoc).find('song').each(function(index, item) {
+            var rank = $(item).find('ranking').text();
+            var title = $(item).find('title').text();
+            var artist = $(item).find('artist').text();
+            
+            htmlContent += "<tr>";
+            htmlContent += "<td>"+rank+"</td>"
+            htmlContent += "<td>"+title+"</td>"
+            htmlContent += "<td>"+artist+"</td>"
+            htmlContent += "<tr/>"
+            
+        });
+        
+        $("tbody").html(htmlContent);
+    })
+</script>
+<title>Document</title>
+</head>
+<body>
+    <h1>차트 순위</h1>
+    <table class="w3-table w3-table-all">
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>곡명</th>
+                <th>가수</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>

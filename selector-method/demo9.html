@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // 선택된 div들 중에 첫번째 것을 찾는다. --> div가 찾아진다.
+        $('div').filter(":first").css('color', 'red');
+        
+        // 선택된 div의 자손중에 첫번째 것을 찾는다.
+        $('div').find(':first').css('background-color', 'yellow');
+        
+    })
+</script>
+<title>Document</title>
+</head>
+<body>
+    <div>
+        <p>1번째 단락</p>
+        <p>2번째 단락</p>
+        <p>3번째 단락</p>
+    </div>
+    <div>
+        <p>4번째 단락</p>
+        <p>5번째 단락</p>
+        <p>6번째 단락</p>        
+    </div>
+</body>
+</html>

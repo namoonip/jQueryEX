@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#keyword-box').keyup(function() {
+            var keyword = $(this).val();
+            
+            $('tbody tr').hide()
+            $('td:contains('+keyword+')').parent().show();
+        })
+    })
+</script>
+<title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="">검색어</label>
+        <input type="text" id="keyword-box">
+    </div>
+    <table class="w3-table w3-table-all">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>국가명</th>
+                <th>수도</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>미국</td>
+                <td>워싱턴</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>프랑스</td>
+                <td>파리</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>영국</td>
+                <td>런던</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>중국</td>
+                <td>북경</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>일본</td>
+                <td>동경</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>대만</td>
+                <td>타이페이</td>
+            </tr>
+        </tbody>      
+    </table>
+</body>
+</html>

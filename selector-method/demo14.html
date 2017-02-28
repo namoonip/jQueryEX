@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        
+        $('button').each(function(index, item) {
+            
+            $(this).click(function() {
+                alert(index+1);
+            });
+        });
+                
+        var buttons = document.getElementsByTagName("button");
+        for (var i=0; i<buttons.length; i++) {
+            
+            (function(num) {
+                var button = buttons[i];
+                button.addEventListener('click', function() {
+                    alert(num+1);
+                });
+            
+            })(i);
+        };
+        
+    })
+</script>
+<title>Document</title>
+</head>
+<body>
+    <div>
+        <button>1번 버튼</button>
+        <button>2번 버튼</button>
+        <button>3번 버튼</button>
+        <button>4번 버튼</button>
+    </div>
+</body>
+</html>

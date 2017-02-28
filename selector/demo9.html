@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        
+        // 현재 체크된 성별 알아내기
+        var gender = $(":radio[name='gender']:checked").val();
+        console.log(gender);
+        
+        // 학력을 대학원졸업으로 변경하기
+        $('select[name="degree"]').prop('selectedIndex', 2);
+        
+        // 관심사항 체크여부 확인하기.
+        $('button').click(function() {
+            var checkedLength =
+            $(':checkbox[name="favorite"]:checked').length;
+            
+            if(checkedLength) {
+                alert("관심사항이 " + checkedLength + "개 선택되었습니다.");
+            } else {
+                alert("선택된 관심사항이 없습니다.");
+            }
+        });
+    })    
+</script>
+<title>Document</title>
+</head>
+<body>
+    <form action="" class="w3-form">
+        <div class="form-group">
+            <label for="user-name">이름</label>
+            <input type="text" name="username" class="form-control" id="user-name"/>
+        </div>
+            
+        <div class="form-group">
+            <label for="user-id">아이디</label>
+            <input type="text" name="user-id" disabled="disabled" id="user-id" class="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="user-pwd">비밀번호</label>
+            <input type="password" id="user-pwd" name="userpwd"  class="form-control"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="user-pwdc">비밀번호 확인</label>
+            <input type="password" id="user-pwdc" name="userpwdConform"  class="form-control"/>
+        </div>
+        
+        
+        <div class="form-group">
+            <label for="">성별</label>
+            <input type="radio" name="gender" value="f" checked="checked" class="w3-radio">여성
+            <input type="radio" name="gender" value="m" class="w3-radio">남성
+        </div>
+        
+        <div class="form-group">
+            <label for="">결혼 여부</label>
+            <input type="radio" name="married" value="y" class="w3-radio" checked="checked">기혼
+            <input type="radio" name="married" value="n" class="w3-radio">미혼
+        </div>
+        
+        <div class="form-group">
+            <label for="">학력</label>
+            <select name="degree" class="w3-select">
+                <option value="h">고등학교 졸업</option>
+                <option value="c">대학교 졸업</option>
+                <option value="s">대학원 졸업</option>
+            </select><br/>
+        </div>
+        
+        <div class="form-group">    
+            <label for="">관심분야</label>
+            <input type="checkbox" name="favorite" value="sports" class="w3-check">운동
+            <input type="checkbox" name="favorite" value="computer" class="w3-check">컴퓨터
+            <input type="checkbox" name="favorite" value="audio" class="w3-check">오디오
+            <input type="checkbox" name="favorite" value="game" class="w3-check">게임
+            <input type="checkbox" name="favorite" value="tavel" class="w3-check">여행
+        </div>
+        
+        <div class="form-group">
+            <label for="">메모</label><br/>
+            <textarea name="memo" id="6" cols="60" rows="10"></textarea>
+        </div>
+    </form>
+    
+    <p>
+      <button>관심사항 체크여부 확인하기</button>
+    </p>
+</body>
+</html>

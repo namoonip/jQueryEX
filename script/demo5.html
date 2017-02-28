@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+    // 객체가 생성될 때 실행되는 생성자 함수(=초기화 함수)
+    function Person() {
+        this.printInfo = function() {
+            return "정보";
+        }
+    }
+    
+    // prototype = 원형
+    // Person이라는 클래스에 이름을 얻기위한 원형을 함수를 넣는다.
+    // 함수를 만들면 원형(prototype을 갖고있다.)
+    Person.prototype.getName = function() {
+        console.log("홍길동");
+    }
+    
+    var person1 = new Person();
+    var person2 = new Person();
+    
+    person1.getName();
+    person2.getName();
+</script>
+<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>

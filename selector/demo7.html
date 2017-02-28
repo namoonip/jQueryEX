@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('[name="username"]').val('홍길동');
+             
+        // name속성 값이 user로 시작하는 필드를 비활성화하기
+        $('[name^="user"]').attr("disabled", "disabled");
+        
+        $('img[alt~="재규어1"]').css("height", "100px");
+        $('img[alt*="재"]').css("height", "200px");
+    })
+</script>
+<title>Document</title>
+</head>
+<body>
+    <div>
+        이름: <input type="text" id="user-name" name="username"><br/>
+        비번: <input type="password" name="userpwd"><br/>
+        나이: <input type="text" name="age" value="30"><br/>
+        별명: <input type="text" name="nickname"><br/>
+    </div>
+    
+    <div>
+        <img src="jag.jpg" alt="재규어1">
+        <img src="jag.jpg" alt="재규어2">        
+        <img src="jag.jpg" alt="재규어3">        
+    </div> 
+</body>
+</html>

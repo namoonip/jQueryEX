@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        
+        var sum = 0;
+        /*$('tbody > tr').each(function(index, item) {
+            //var qty = $(item).find("td").eq(1).text();
+            //var price = $(item).find("td").eq(2).text();*/
+            
+            var $tds = $(item).find("td");
+            var qty = $tds.eq(1).text();
+            var price = $tds.eq(2).text();
+            
+            sum += (qty * price);
+        })
+        $('#total-box').text(sum);     
+        
+    })
+    </script>
+<title>Document</title>
+</head>
+<body>
+    <table class="w3-table w3-table-all">
+       <thead>
+           <tr>
+               <th>상품이름</th>
+               <th>수량</th>
+               <th>가격</th>
+           </tr>
+       </thead>
+        <tbody>
+            <tr>
+                <td>아이폰7</td>
+                <td>2</td>
+                <td>800000</td>
+            </tr>        
+            <tr>
+                <td>갤럭시노트 7</td>
+                <td>1</td>
+                <td>900000</td>
+            </tr>        
+            <tr>
+                <td>LG V20</td>
+                <td>3</td>
+                <td>600000</td>
+            </tr>           
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">구매금액 합계</td>
+                <td id="total-box"></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

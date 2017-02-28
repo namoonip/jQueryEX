@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {          
+            // 태그 이름 선택자
+            $('h1').text("선택된 태그의 텍스트 컨텐츠를 바꾸자");
+            
+            // 모든 li태그를 찾아 컨텐츠의 색을 오렌지로 바꾼다.
+            $('li').css('color', 'orange');
+            
+            // 아이디 선택자
+            $('#user-name').css('color', 'green');
+            
+            // 클래스 선택자
+            $('.first').css('font-weight', 'bold');
+            
+            var addr = $('#my-addr').text();
+            
+            // 열거형 : ','를 사용해 여러 개의 선택자를 나열하면
+            //          각각의 선택자에 해당되는 모든 요소를 검색한다
+            $('h1, h2').css('color', 'blue');
+            
+            
+          })
+    </script>
+</head>
+<body>
+    <h1>홈페이지 방문을 환영합니다</h1>
+    
+    <div class="intro">
+        <p>제 이름은 <span id="user-name">홍길동</span>입니다.</p>
+        <p id="my-addr">저는 서울에 살고 있습니다.</p>
+        <p>친구가 겁나 많습니다.</p>
+    </div>
+    
+    <h2>좋아하는 가수</h2>
+    <ul>
+        <li class="first">볼빨간 사춘기</li>
+        <li>유성은</li>
+        <li>트와이스</li>
+    </ul>
+    
+    <h2>좋아하는 운동</h2>
+    <ul>
+        <li class="first">달리기</li>
+        <li>자전거 타기</li>
+        <li>등산</li>
+    </ul>
+    </body>
+</html>
