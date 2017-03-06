@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // json 표기법으로 작성된 텍스트
+        var jsonText = '{"title":"로건", "genre":"sf", "playtime":120, "discount":false}';
+        
+        // json 표기법으로 작성된 텍스트를 javasript의 객체 혹은 배열로 변환하기
+        var movie = JSON.parse(jsonText);
+        
+        console.log("영화 제목:", movie.title);
+        console.log("영화 장르:", movie.genre);
+        
+        var jsonText2 = '["로건", "23아이덴티티", "재심", "트롤", "문라이트"]';
+        var movieList = JSON.parse(jsonText2)
+        
+        for(var i=0; i<movieList.length; i++) {
+            console.log("영화 " + (i+1) + "위: " + movieList[0])
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

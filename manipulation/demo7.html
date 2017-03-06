@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {border: 1px solid red; padding: 20px;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $('div#intro').prepend("<p>.prepend()를 사용한 추가하기");
+            $('div#intro').append("<p>.append()를 사용한 추가하기");
+            
+            $('div#intro').before("<p>.before()를 사용한 추가하기");
+            $('div#intro').after("<p>.after()를 사용한 추가하기");
+            
+            var $item = $('<li></li>');
+            $item.append('<a href="http://www.mymaxim.co.kr/">Maxim</a>');
+            $('ul#favorites').append($item);
+            
+            $('<li><a href="https://www.dolce-gusto.co.kr/">Nescafe</a></li>').appendTo('ul#favorites');
+        });
+    </script>
+</head>
+<body>
+    <div id="intro">
+        <p>이순신</p>
+        <p>김유신</p>
+        <p>강감찬</p>
+        <p>홍길동</p>
+        
+        <ul id="favorites">
+            
+        </ul>
+    </div>
+</body>
+</html>

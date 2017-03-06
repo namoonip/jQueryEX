@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $('li').click(function() {
+                $('li').removeClass("active");
+                $(this).addClass("active");
+            });
+            
+            $('#up-btn').click(function() {
+                //var $prev = $('li.active').prev();
+                //var $li = $('li.active').detach();
+                //$prev.before($li); 아래 if문을 풀어 쓴 것과 같다.
+                var $active = $('li.active');
+                if(!$active.is('li:first')) {
+                    $active.prev().before($active.detach());
+                }
+            });
+
+            $('#down-btn').click(function() {
+                //var $next = $('li.active').next();
+                //var $li = $('li.active').detach();
+                //$next.after($li);
+                var $active = $('li.active');
+                if(!$active.is('li:last')) {
+                    $active.next().after($active.detach());
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>회원 명단</h3>
+        <ul class="list-group">
+            <li class="list-group-item">이순신</li>
+            <li class="list-group-item">홍길동</li>
+            <li class="list-group-item">김유신</li>
+            <li class="list-group-item">강감찬</li>
+            <li class="list-group-item">유관순</li>
+        </ul>
+    
+        <div>
+            <button class="btn btn-default" id="up-btn">
+                <span class="glyphicon glyphicon-arrow-up"></span>
+            </button>
+            <button class="btn btn-default" id="down-btn">
+                <span class="glyphicon glyphicon-arrow-down"></span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

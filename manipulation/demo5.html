@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            var filenames = ["Hydrangeas.jpg", "Koala.jpg", "Lighthouse.jpg", "Penguins.jpg", "Desert.jpg"];
+            
+            // 문서에서 scroll 이벤트가 발생할 때 실행될 콜백함수 정의
+            $(document).scroll(function(){
+                var documentHeight = $(document).height();
+                var scrollTop = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                
+                var currentHeight = windowHeight + scrollTop;
+                
+                if(documentHeight <= currentHeight + 100) {
+                    $('div').append(getImageContent());
+                    $('div').append(getImageContent());
+                    $('div').append(getImageContent());
+                    
+                }
+            });
+            
+            function getImageContent() {
+                var index = Math.floor(Math.random() * filenames.length);
+                var filename = filenames[index];
+                var htmlContent = "<img src='images/"+filename+"' width='200px;' height='200px;'>";
+
+                return htmlContent;
+            };
+            
+        });
+    </script>
+</head>
+<body>
+   <div>
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    <img src="images/Desert.jpg" alt="" width="200px;" height="200px;">
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <style>
+        div {margin: 10px; padding: 10px;}
+    </style>
+    <script>
+        $(function() {
+            $('p').wrap('<div style="border: 1px solid red;"></div>');
+            
+            $('p').wrapAll('<div style="border: 1px solid red;"></div>');
+            
+            $('p').wrapInner('<span style="border:1px solid green"></span>');
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <p>1번째 단락</p>
+        <p>2번째 단락</p>
+        <p>3번째 단락</p>
+        <p>4번째 단락</p>
+    </ul>
+</body>
+</html>

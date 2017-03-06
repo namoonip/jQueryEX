@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+            $(function() {
+                /* $('p').mouseover(function() {
+                    $(this).addClass('high-light');
+                });
+                $('p').mouseout(function() {
+                    $(this).removeClass('high-light');
+                }); 
+                
+                // hover(함수1, 함수2)
+                // 함수1은 마우스가 엘리먼트로 진입하는 겨우 실행될 콜백함수
+                // 함수2는 마우시가 엘리먼트로 떠나는 경우 실행될 콜백함수
+                $('p').hover(function() {
+                    $(this).addClass('high-light');
+                }, function() {
+                    $(this).removeClass('high-light');
+                });
+                
+                $('button').click(function() {
+                    $('p').toggleClass('high-light');
+                }); */
+                
+                // 클래스에 memo는 포함하고, first는 포함하고 있지 않은 p에 대해서 조작하기
+                $("p.memo").each(function() {
+                    if(!$(this).hasClass('first')) {
+                        $(this).text('이 단락은 클래스에 first를 포함하고 있지 않습니다.');
+                    }
+                });
+            });
+    </script>
+    <title>Document</title>
+    <style>
+        .high-light {color: red; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div>
+        <p class="first memo">마우스가 이 단락위에 오면 색깔이 변하고 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락위에 오면 색깔이 변하고 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락위에 오면 색깔이 변하고 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락위에 오면 색깔이 변하고 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락위에 오면 색깔이 변하고 글자가 커진다.</p>
+        <button> 스타일 변경하기</button>        
+    </div>
+    
+
+</body>
+</html>

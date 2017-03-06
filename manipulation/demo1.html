@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            
+            var filenames = ["Penguins.jpg", "Koala.jpg", "Lighthouse.jpg"];
+            
+            $("img").each(function(index, item) {
+                // item에는 img 엘리먼트 객체 <-- jQuery 조작함수 사용할 수 없는 단순한 객체
+                $(item).attr("src", "images/" + filenames[index]);
+            });
+            
+            $("img").first().attr({width:"200px;", height:"200px;", alt:"펭귄"});
+            
+            var totalPrice = 0;
+            $("ul input").each(function() {
+                // this : each()함수 안에 사용되는 this에는 항상 처리대상이 되는 그 엘리먼트가
+                //        들어있다(반복할 때마다 선택된 엘리먼트들이 차례로 하나씩 전달된다).
+                //        enhanced for문의 요소와 같다.
+                var price = parseInt($(this).attr("value"));
+                totalPrice += price;
+            });
+            $("#item-total-box").text("합계: " + totalPrice + " 원" );
+            
+            $(':radio[name="married"]').change(function(){
+                // this를 이용하기
+                if($(this).val() == 'no') {
+                    // disabled 속성 추가
+                    $(':input[name="wedding"]').attr("disabled","disabled");
+                } else {
+                    // disabled 속성 삭제
+                    $(':input[name="wedding"]').removeAttr("disabled");
+                }
+            });     
+            
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="images/Desert.jpg" width="150px;" height="150px;" alt="img1" >
+        <img src="images/Desert.jpg" width="150px;" height="150px;" alt="img2" >
+        <img src="images/Desert.jpg" width="150px;" height="150px;" alt="img3" >
+    </div>
+    
+    <h3>상품 리스트</h3>
+    <ul>
+        <li id="item-1">스마트폰   <input type="text" value="700000"></li>
+        <li id="item-2">게임기     <input type="text" value="150000"></li>
+        <li id="item-3">텔레비전   <input type="text" value="300000"></li>
+    </ul>
+
+    <p id="item-total-box"></p>
+    
+    
+    <form>
+        이름 : <input type="text" name="username" /> <br />
+        결혼 : <input type="radio" name="married" value="yes" checked /> 기혼
+                <input type="radio" name="married" value="no" /> 미혼 <br />
+        결혼 기념일 : <input type="text" name="wedding" /> <br />
+    </form>
+
+</body>
+</html>
