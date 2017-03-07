@@ -8,11 +8,61 @@
 <script type="text/javascript">
     $(function() {
         
+        $('li.category').click(function() {
+            alert('카테고리 항목이 클릭되었습니다.');
+        });
+        
+        /*$('li.item').click(function() {
+            // event 버블링 차단하기.
+            event.stopPropagation();
+            alert('세부 항목이 클릭되었습니다.');
+        }).mouseup(function() {
+            alert("mouse up...");
+        }).mousedown(function() {
+            alert("mouse down...");
+        });*/
+        
+        $("li.item").on('click', function(event){
+            // 상위요소로의 이벤트 전달을 중단시킨다.
+            // .stopImmediatePropagation()는
+            // event.stopImmediatePropagation();
+            
+            // 상위요소로의 이벤트 전달만을 중단시키고
+            // 동위요소의 이벤트는 중단시키지 않는다.
+            // .stopPropagation
+            event.stopPropagation();
+            alert('click1');
+            
+            // return false;
+        }).on('click', function() {
+            alert('click2');
+        });
+        
     })
 </script>
-<title>Document</title>
+<style>
+    li.category {font-weight: 1px solid bold;}
+    li.item {font-weight: normal; color: cornflowerblue;}
+</style>
 </head>
 <body>
-
+    <div class="container">
+        <ul>
+            <li class="category">뉴스
+                <ul>
+                    <li class="item">정치</li>
+                    <li class="item">사회</li>
+                    <li class="item">국제</li>
+                </ul>
+            </li>
+            <li class="category">스포츠
+                <ul>
+                    <li class="item">축구</li>
+                    <li class="item">야구</li>
+                    <li class="item">기타</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

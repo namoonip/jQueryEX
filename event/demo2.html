@@ -7,12 +7,37 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     $(function() {
+        /*
+        // 1. 미래에 추가될 <button>과 클릭이벤트 연결하기
+        // 최근본 서적 이미지 리스트에 버튼을 등록하여 사용되기도 한다.
+        $('#btn-box').on('click','button', function() {
+            alert('버튼이 클릭되었습니다.');
+        });
+        
+        // 2. 이미 존재하는 <button>과 클릭이벤트 연결하기
+        $("#add-btn").click(function() {
+            var htmlContent = "<button>버튼</button>";
+            $('#btn-box').append(htmlContent);
+        });
+        */
+        
+        // 위의 2번과 같은 코드이다.
+        // 새로 추가할 버튼에 이벤트를 미리 연결해서 div에 추가하기
+        $('#add-btn').click(function() {
+            var $button = $('<button>버튼</button>').click(function() {
+                alert("버튼이 클릭되었습니다.");
+            });
+            $('#btn-box').append(htmlContent);
+        });
         
     })
 </script>
-<title>Document</title>
+<style>
+    div#btn-box {border:1px solid black; padding: 20px; margin: 20px;}        
+</style>
 </head>
 <body>
-
+    <div id="btn-box"></div>
+    <div><button id="add-btn">추가하기</button></div>
 </body>
 </html>

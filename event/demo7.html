@@ -7,12 +7,24 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     $(function() {
+        $('.list-group-item').click(function() {
+            $('.list-group-item').removeClass('active');
+            $(this).addClass('active');
+        });
         
+        $('.list-group-item:last').trigger('click');
     })
 </script>
-<title>Document</title>
 </head>
 <body>
-
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item">사장</li>
+            <li class="list-group-item">이사</li>
+            <li class="list-group-item">부장</li>
+            <li class="list-group-item">차장</li>
+            <li class="list-group-item">과장</li>
+        </ul>    
+    </div>
 </body>
 </html>

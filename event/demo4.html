@@ -7,12 +7,37 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     $(function() {
+        // 이벤트와 관련된 기본 동작 실행을 방해하기
+        
+        // 1.event객체의 preventDefault()메소드 실행        
+        $('#link-box a').click(function(e) {
+            e.preventDefault();
+            var imagePath = $(this).attr('href');
+            $('img').attr('src', imagePath);
+        });
+        
+        // 2.이벤트 핸들러함수가 false값을 반환하기
+        $('#link-box a').click(function() {
+            var imagePath = $(this).attr('href');
+            $('img').attr('src', imagePath);
+            return false;
+        });
         
     })
 </script>
 <title>Document</title>
 </head>
 <body>
-
+    <div id="link-box">
+        <a href="images/Hydrangeas.jpg">수국</a>
+        <a href="images/Desert.jpg">사막</a>
+        <a href="images/Koala.jpg">코알라</a>
+        <a href="images/Penguins.jpg">펭귄</a>
+        <a href="images/Lighthouse.jpg">등대</a>
+    </div>
+    
+    <div>
+        <img src="images/Hydrangeas.jpg" width="40%;" height="40%;" alt="">
+    </div>
 </body>
 </html>

@@ -6,13 +6,45 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
-    $(function() {
-        
+    $(function() {        
+        // <form>에서 submit이벤트가 발생했을 때 실행할 이벤트핸들러 함수 연결
+        $('form').submit(function() {
+            
+            if($(':input[name="username"]').val() == "") {
+                alert('이름은 필수입력값입니다.');
+                $(':input[name="username"]').focus();
+                return false;
+            }
+
+            if($(':input[name="userid"]').val() == "") {
+                alert('아이디는 필수입력값입니다.');
+                $(':input[name="userid"]').focus();
+                return false;
+            }
+
+            if($(':input[name="userpwd"]').val() == "") {
+                alert('비밀번호는은 필수입력값입니다.');
+                $(':input[name="userpwd"]').focus();
+                return false;
+            }
+
+            return true;
+        });
     })
 </script>
 <title>Document</title>
 </head>
 <body>
-    
+   <div class="container">
+        <form action="register.jsp" method="post">
+            이름 <br/>
+            <input type="text" name="username"><br/>
+            아이디 <br/>
+            <input type="text" name="userid"><br/>
+            비밀번호 <br/>
+            <input type="password" name="userpwd"><br/>
+            <button type="submit">등록</button>
+        </form>
+    </div>
 </body>
 </html>

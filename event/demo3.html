@@ -7,12 +7,32 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     $(function() {
+        $('button').on({
+            click: function() {
+                alert('click');
+            },
+            mouseenter: function() {
+                alert('mouseenter');
+            },
+            mouseleave: function() {
+                alert('mouseleave');
+            }
+        });
         
+        $('input').keyup(function(event) {
+            console.log(event.type);
+            console.log(event.target);
+            // 내가 누른 keyboard의 아스키 코드 값이 들어있다.
+            console.log(event.which);
+        });
     })
 </script>
 <title>Document</title>
 </head>
 <body>
-
+    <div>
+        <input type="text" id="user-name" name="username"><br/>
+        <button>버튼</button>
+    </div>
 </body>
 </html>

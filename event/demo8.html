@@ -7,12 +7,31 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
     $(function() {
-        
+        $(':input[name="username"]').on('keyup keypress', function() {
+            // ^[]는 시작을, [^]는 not을 의미한다.
+            var pattern = /[^ㄱ-힣]/g;
+            var text = $(this).val();
+            // 한글만 입력할 수 있도록 제한한다.
+            var koreanText = text.replace(pattern, "");
+            $(this).val(koreanText);
+            
+            $(":input[name='age']").on('keyup', function() {
+                var pattern = /[^0-9]/g;
+                var text = $(this).val();
+                
+                var numberText = text.replace(pattern, '');
+                $(this).val(numberText);
+            });
+        });
     })
 </script>
-<title>Document</title>
 </head>
 <body>
-
+    <h1>입력폼</h1>
+    <form action="">
+        이름 : <input type="text" name="username"><br/>
+        나이 : <input type="text" name="age"><br/>
+        ...
+    </form>
 </body>
 </html>

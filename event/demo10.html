@@ -5,14 +5,50 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<style>
+    div#outter1, div#outter2 {border: 1px solid red; padding: 30px;}
+    div#inner1, div#inner2 {border: 1px solid blue; padding: 30px;}
+</style>
 <script type="text/javascript">
     $(function() {
+        /*$('div#first div').mouseover(function(e) {
+           console.log('mouseover', e.target.id); 
+        });
+        $('div#first div').mouseout(function(e) {
+           console.log('mouseout', e.target.id); 
+        });
         
+        $('div#second div').mouseenter(function(e) {
+            console.log('mouseenter', e.target.id);
+        });
+        $('div#second div').mouseleave(function(e) {
+            console.log('mouseleave', e.target.id);
+        });*/
+        
+        $('div#first div').mouseover(function(e) {
+            console.log('mouse over', e.target.id);
+        });
+        $('div#second div').mouseenter(function(e) {
+            console.log('mouse enter', e.target.id);
+        });
     })
 </script>
-<title>Document</title>
 </head>
 <body>
+    <div id="first">
+        <div id="outter1">
+            <div id="inner1">
 
+            </div>
+        </div>
+    </div>
+    
+    <div id="second">
+        <div id="outter2">
+            <div id="inner2">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>

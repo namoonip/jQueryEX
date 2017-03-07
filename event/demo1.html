@@ -8,25 +8,33 @@
 <script type="text/javascript">
     $(function() {
         $("#first-btn").on('click', function() {
-            
+            console.log($(this));
+            alert('첫번째 버튼 클릭');
         });
         
         $("#second-btn").one('click', function() {
-            
+            alert('두번째 버튼 클릭');
         });
         
         $("#third-btn").click(function() {
-            
+            alert('세번째 버튼 클릭');
+        });
+        
+        $('#forth-btn').click(function() {
+            $('#first-btn').off('click');
+            alert('버튼1가 off되었습니다.');
         });
     })
 </script>
 <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <button id="first-btn">버튼1</button>
         <button id="second-btn">버튼2</button>
         <button id="third-btn">버튼3</button>
+        
+        <button id="forth-btn">버튼4</button>
     </div>
 </body>
 </html>
