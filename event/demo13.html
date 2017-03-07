@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $(":input[name^='user']").on('focus blur', function() {
+            $(this).toggleClass('on');
+        });
+    })
+</script>
+<style>
+    .on {border: 2px solid lightgreen; background-color: darkseagreen;}
+</style>
+</head>
+<body>
+   <h1>수정 폼</h1>
+    <form action="modify.jsp" method="post">
+        <label>아이디 : </label>
+            <input type="text" name="userid"> <br/>
+        <label>비밀번호 : </label>
+            <input type="password" name="userpwd"> <br/>
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>

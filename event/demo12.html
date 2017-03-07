@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $(":input").change(function() {
+            $('button').removeAttr("disabled");
+        });
+    })
+</script>
+</head>
+<body>
+   <h1>수정 폼</h1>
+    <form action="modify.jsp" method="post">
+        <label>이름 : </label>
+            <input type="text" name="username" value="홍길동"> <br/>
+        <label>아이디 : </label>
+            <input type="text" name="userid" value="hong"> <br/>
+        <label>출신지</label><br/>
+            <select name="home">
+                <option value="">서울</option>
+                <option value="">경기</option>
+                <option value="">인천</option>
+                <option value="">강원</option>
+            </select><br/>
+        <button type="submit" disabled="disable">수정</button>
+    </form>
+</body>
+</html>

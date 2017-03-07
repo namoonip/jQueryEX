@@ -8,10 +8,26 @@
 <script type="text/javascript">
     $(function() {
         
+        $('div').on('click', 'span', function() {
+            $(window).scrollTop(0);
+        });
+        
+        var text = "WASHINGTON — The White House on Monday refused to acknowledge reports that James B. Comey, the F.B.I. director, had asked the Justice Department to refute President Trump’s claim that President Barack Obama wiretapped him during the 2016 presidential campaign, and said Mr. Trump still believes he was spied on.Mr. Comey urged the Justice Department this weekend to push back against Mr. Trump’s claims, but the department has not said anything publicly. The New York Times first reported about Mr. Comey’s request to the Justice Department on Sunday, and other news media organizations followed suit.";
+        
+        for (var i=0; i<5; i++) {
+            var $p = $("<p>"+text+"</p>");
+            
+            $p.append("<span style='color: blue;'> [Top] </span>");
+            
+            $('div').append($p);
+        }
     })
 </script>
+<style>
+    p {margin: 20px; padding: 10px; border: 1px solid gray;}    
+</style>
 </head>
 <body>
-
+    <div></div>
 </body>
 </html>
