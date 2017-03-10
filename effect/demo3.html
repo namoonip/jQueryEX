@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<style>
+    img {width: 200px; height: 200px;}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $("img").click(function() {
+           $(this).fadeOut(3000);
+        });        
+        $('button#fadein-btn').click(function() {
+            $('img:hidden').fadeIn();
+        });        
+        $('button#fadeto-btn').click(function() {
+            $('img:eq(0)').fadeTo("slow", 0.1);
+            $('img:eq(1)').fadeTo("slow", 0.4);
+            $('img:eq(2)').fadeTo("slow", 0.65);
+            $('img:eq(3)').fadeTo("slow", 0.95);
+        });
+    })
+</script>
+</head>
+<body>
+   <p>
+       <button id="fadein-btn">fadeIn</button>
+       <button id="fadeto-btn">fadeTn</button>
+    </p>
+    <div>
+        <img src="images/Penguins.jpg" alt="">
+        <img src="images/Desert.jpg" alt="">
+        <img src="images/Lighthouse.jpg" alt="">
+        <img src="images/Koala.jpg" alt="">
+    </div>
+</body>
+</html>

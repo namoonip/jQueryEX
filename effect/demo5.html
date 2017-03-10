@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<style>
+    div#outter{width: 500px; height: 400px; border: 1px solid black; position: relative;}
+    div#inner{width: 100px; height: 100px; background-color: red; position: absolute;}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $("#left-btn").click(function() {
+            $("#inner").animate({left:"-=30px"});
+        });
+        $("#right-btn").click(function() {
+            $("#inner").animate({left:"+=30px"});
+        });
+        $("#up-btn").click(function() {
+            $("#inner").animate({top:"-=30px"});
+        });
+        $("#down-btn").click(function() {
+            $("#inner").animate({top:"+=30px"});
+        });
+    })
+</script>
+</head>
+<body>
+   <div>
+       <p>
+           <button id="left-btn">left</button>
+           <button id="right-btn">right</button>
+           <button id="up-btn">up</button>
+           <button id="down-btn">dwon</button>
+       </p>
+   </div>
+    <div id="outter">
+        <div id="inner"></div>
+    </div>
+</body>
+</html>

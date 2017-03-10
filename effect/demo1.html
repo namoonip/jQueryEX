@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<style>
+    div {width: 200px; height: 200px; background-color: red;}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $('#show-btn').attr("disabled", "disabled");
+        
+        $('#show-btn').click(function() {
+            $(this).attr("disabled", "disabled");
+            $('#hide-btn').removeAttr("disabled");
+            
+            //$("#box").show(1000);
+            //$("#box").show("slow");
+            
+            $('#box').show(5000, function() {
+                alert("박스가 화면에 표시됩니다.");
+            });
+        });
+        
+        $("#hide-btn").click(function() {
+            $(this).attr("disabled", "disabled");
+            $('#show-btn').removeAttr("disabled");
+            
+            //$("#box").hide(1000);
+            $("#box").hide("fast");
+        });
+    })
+</script>
+</head>
+<body>
+   <p>
+       <button id="show-btn">show</button>
+       <button id="hide-btn">hide</button>
+    </p>
+    <div id="box"></div>
+</body>
+</html>
